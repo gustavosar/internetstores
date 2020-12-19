@@ -1,0 +1,145 @@
+/* Google FONTS */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+/* Variables */
+:root {
+  --header-height: 1rem;
+  /* Font & typo */
+  --body-font: 'Roboto', sans-serif;
+  --nav-name-font-size: 1.5rem;
+  --normal-font-size: 1rem;
+  /* Colors */
+  --first-color: #3f3f3f;
+  --first-color-light: #616161;
+  --second-color: #de0031;
+  --dark-color: #000;
+  --white-color: rgb(230, 230, 230);
+  /* z index */
+  --z-fixed: 100;
+}
+
+/* Base */
+*,
+::before,
+::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  margin: var(--header-height) 0 0 0;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* header */
+.header {
+  width: 100%;
+  height: var(--header-height);
+  padding: 0 1rem;
+  background-color: #FFF;
+  z-index: var(--z-fixed);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header__toggle {
+  font-size: 1.7rem;
+  cursor: pointer;
+  z-index: var(--z-fixed);
+}
+
+/* Nav */
+.nav {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  background-color: var(--white-color);
+  width: 300px;
+  height: 100vh;
+  padding: 2rem 0;
+  -webkit-transition: .5s;
+  transition: .5s;
+  overflow-y: auto;
+}
+
+.nav__menu {
+  padding: 8%;
+}
+
+.nav__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.nav__item {
+  margin-bottom: 2rem;
+  list-style: none;
+}
+
+.nav__link {
+  color: var(--first-color);
+}
+
+.nav__link:hover {
+  color: var(--first-color-light);
+}
+
+.nav .menu-top {
+  background-color: var(--white-color);
+  width: 20%;
+  height: 3rem;
+  position: fixed;
+  top: 0;
+  z-index: var(--z-fixed);
+}
+
+/* Show menu */
+.show {
+  left: 0;
+}
+
+/* Dropdown */
+.dropdown__link {
+  float: left;
+  width: 90%;
+}
+
+.dropdown__icon {
+  font-size: 1.3rem;
+  -webkit-transition: .5s;
+  transition: .5s;
+  color: var(--first-color);
+  float: right;
+}
+
+.dropdown__menu {
+  margin: 1rem 0 0 1rem;
+  display: none;
+}
+
+.dropdown__item {
+  margin: 1rem 0;
+}
+/*# sourceMappingURL=styles.css.map */

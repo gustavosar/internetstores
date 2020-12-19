@@ -1,0 +1,135 @@
+/* Google FONTS */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+/* Variables */
+
+:root {
+    --header-height: 1rem;
+    /* Font & typo */
+    --body-font: 'Roboto', sans-serif;
+    --nav-name-font-size: 1.5rem;
+    --normal-font-size: 1rem;
+    /* Colors */
+    --first-color: #3f3f3f;
+    --first-color-light: #616161;
+    --second-color: #de0031;
+    --dark-color: #000;
+    --white-color: rgb(230, 230, 230);
+    /* z index */
+    --z-fixed: 100;
+}
+
+
+/* Base */
+
+*,
+::before,
+::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: var(--header-height) 0 0 0;
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* header */
+
+.header {
+    width: 100%;
+    height: var(--header-height);
+    padding: 0 1rem;
+    background-color: #FFF;
+    z-index: var(--z-fixed);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__toggle {
+        font-size: 1.7rem;
+        cursor: pointer;
+        z-index: var(--z-fixed);
+    }
+}
+
+
+/* Nav */
+
+.nav {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    background-color: var(--white-color);
+    width: 300px;
+    height: 100vh;
+    padding: 2rem 0;
+    transition: .5s;
+    overflow-y: auto;
+    &__menu {
+        padding: 8%
+    }
+    &__content {
+        display: flex;
+        flex-direction: column;
+    }
+    &__item {
+        margin-bottom: 2rem;
+        list-style: none;
+    }
+    &__link {
+        color: var(--first-color);
+        &:hover {
+            color: var(--first-color-light);
+        }
+    }
+    .menu-top {
+        background-color: var(--white-color);
+        width: 20%;
+        height: 3rem;
+        position: fixed;
+        top: 0;
+        z-index: var(--z-fixed);
+    }
+}
+
+
+/* Show menu */
+
+.show {
+    left: 0;
+}
+
+
+/* Dropdown */
+
+.dropdown {
+    &__link {
+        float: left;
+        width: 90%;
+    }
+    &__icon {
+        font-size: 1.3rem;
+        transition: .5s;
+        color: var(--first-color);
+        float: right;
+    }
+    &__menu {
+        margin: 1rem 0 0 1rem;
+        display: none;
+    }
+    &__item {
+        margin: 1rem 0;
+    }
+}
